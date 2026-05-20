@@ -131,39 +131,26 @@ header{
   border-radius:20px;
 }
 .imgs{
-  width:360px;
-  height:200px;
-  padding:2px;
-  transition: scale .4s;
-  border-radius:5px;
-  position:static;
   
+  width:100%;
+  max-width:360px;
+  height:auto;
+  object-fit:cover;
 }
+  
+
 
 .imgs:hover{
   scale:1.1;
 }
 .wildlifes{
   display:grid;
-  grid-template-columns: 400px 400px 400px;
-  gap:10px;
- 
-  justify-content: center;
-  background:linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.6)),url("https://wildwomenexpeditions.com/wp-content/uploads/2024/01/Japan-Pilgrimage-Hero-1-1600x900.jpg") ;
-  background-repeat:no-repeat;
-  background-attachment:fixed;
-  background-size: cover;
-  color:white;
- 
-  /* font-weight:bold; */
-  padding-top:50px;
-  padding-left:5%;
-  /* width:70rem;
-  height:30rem;
-  overflow-x:scroll; */
-  height:140vh;
- position:relative;
- z-index:1;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:20px;
+  width:100%;
+  padding:20px;
+  box-sizing:border-box;
+  height:auto;
 }
 .wildlifes::before{
   position:absolute;
@@ -174,7 +161,51 @@ header{
   opacity:0.5;
   inset:0;
 }
-@media(max-width:580px){
+/* resopnsive */
+@media (max-width:768px){
+
+  #navigation ul{
+    flex-direction:column;
+    align-items:center;
+    gap:10px;
+    padding:20px 0;
+  }
+
+  .wildlifes,
+  .lvdo{
+    grid-template-columns:1fr;
+    padding:10px;
+  }
+
+  .status{
+    width:100%;
+    max-width:320px;
+    margin:auto;
+  }
+
+  .updatetime{
+    font-size:24px;
+    margin-left:0;
+    justify-content:center;
+  }
+
+  #m-p{
+    flex-direction:column;
+    margin-left:0;
+  }
+
+  textarea{
+    width:95%;
+  }
+
+  .content{
+    margin:auto;
+  }
+
+}
+
+/* responsive */
+/* @media(max-width:580px){
   .wildlifes{
     display:flex;
     flex-direction:column;
@@ -189,12 +220,12 @@ header{
         justify-content:center;
         align-content:center;
   }
-}
+} */
 
 #m-p{
   display:flex;
   flex-direction:row;
-  gap:4px;
+  gap:8px;
   align-items: center;
   /* justify-content: flex-end; */
   margin-left:10em;
@@ -330,7 +361,7 @@ header{
   display:flex;
   flex-direction:row;
   gap:3px;
-  font-size:20px;
+  font-size:40px;
   margin-left:40px;
  }
  .form{
@@ -341,10 +372,13 @@ header{
   background-color:black;
  }
  .P1{
-  width:50rem;
-  height:20rem;
+  
+  width:100%;
+  max-width:800px;
+  height:auto;
+
  }
- .completeBtn{
+ /* .completeBtn{
   width:100px;
   height:40px;
   background-color:rgb(6, 209, 132);
@@ -352,13 +386,13 @@ header{
   margin-left:43%;
   position:absolute;
   font-weight:bold;
- }
+ } */
  .Pc{
   display: flex;
   flex-direction: column;
   gap:30px;
  }
- .ncompleteBtn{
+ /* .ncompleteBtn{
   width:100px;
   height:40px;
   background-color:rgb(153, 3, 3);
@@ -367,7 +401,13 @@ header{
   margin-left:52%;
  position:absolute;
   font-weight:bold;
- }
+ } */
+ .completeBtn,
+.ncompleteBtn{
+  position:static;
+  margin:20px auto;
+  display:block;
+}
  .borderline{
   border-bottom:1px solid black;
   width:95%;
@@ -402,6 +442,9 @@ header{
   padding-top:50px;
   border-radius:12px;
   color:white;
+  overflow-y: scroll;
+  height:450px;
+  overflow-x:hidden;
  }
  .chartdata{
   margin-top:50px;
@@ -449,4 +492,29 @@ header{
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
+}
+.datatable{
+    margin-top: 100px;
+    width:100%;
+  
+}
+.deletebutton{
+  background: none;
+  border: none;
+  color: rgb(249, 100, 100);
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: lighter;
+}
+.editbtn{
+  color:rgb(4, 198, 53);
+  font-weight:lighter;
+  text-decoration: underline;
+}
+.notepara{
+  width:280px;
+}
+.decor{
+  border:1px solid rgb(96, 95, 95);
 }
